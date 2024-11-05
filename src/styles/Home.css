@@ -1,3 +1,4 @@
+/* Основний контейнер */
 .home-container {
   display: flex;
   justify-content: center;
@@ -8,6 +9,7 @@
   position: relative;
 }
 
+/* Канвас для частинок */
 .particle-canvas {
   position: absolute;
   top: 0;
@@ -16,6 +18,7 @@
   height: 100%;
 }
 
+/* Основний контент */
 .content {
   background-color: rgba(255, 255, 255, 0.9);
   padding: 2rem;
@@ -32,6 +35,7 @@
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
+/* Заголовок */
 .title {
   font-size: 2.8rem;
   color: #333;
@@ -40,6 +44,7 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Опис */
 .description {
   font-size: 1.2rem;
   color: #555;
@@ -47,12 +52,14 @@
   line-height: 1.6;
 }
 
+/* Контейнер для кнопок */
 .buttons {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
 }
 
+/* Загальні стилі для кнопок */
 .btn {
   padding: 0.8rem 1.5rem;
   font-size: 1.1rem;
@@ -63,6 +70,81 @@
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
+
+/* Первинна кнопка */
+.btn-primary {
+  background-color: #4a90e2;
+  color: white;
+  border: 2px solid #4a90e2;
+}
+
+/* Вторинна кнопка */
+.btn-secondary {
+  background-color: transparent;
+  color: #4a90e2;
+  border: 2px solid #4a90e2;
+}
+
+/* Ховер ефекти для кнопок */
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: #3a7bd5;
+  border-color: #3a7bd5;
+}
+
+.btn-secondary:hover {
+  background-color: #4a90e2;
+  color: white;
+}
+
+/* Інформація про розробника */
+.developer-info {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 10;
+}
+
+.developer-info-content {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.developer-info-content p {
+  margin: 0;
+}
+
+.developer-info a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.developer-info a:hover {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Анімація градієнту */
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Секретне модальне вікно */
 .secret-modal {
   position: fixed;
   top: 0;
@@ -112,6 +194,7 @@
   background-color: #0056b3;
 }
 
+/* Анімації */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -121,79 +204,28 @@
   from { transform: scale(0.8); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
-.btn-primary {
-  background-color: #4a90e2;
-  color: white;
-  border: 2px solid #4a90e2;
-}
 
-.btn-secondary {
-  background-color: transparent;
-  color: #4a90e2;
-  border: 2px solid #4a90e2;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.btn-primary:hover {
-  background-color: #3a7bd5;
-  border-color: #3a7bd5;
-}
-
-.btn-secondary:hover {
-  background-color: #4a90e2;
-  color: white;
-}
-
-.developer-info {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  z-index: 10;
-}
-
-.developer-info-content {
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-  color: white;
-  font-size: 16px;
-  padding: 10px 20px;
-  border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.developer-info-content p {
-  margin: 0;
-}
-
-.developer-info a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-
-.developer-info a:hover {
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
+
+/* Застосування анімації до елементів контенту */
+.content > * {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.content > *:nth-child(1) { animation-delay: 0.1s; }
+.content > *:nth-child(2) { animation-delay: 0.3s; }
+.content > *:nth-child(3) { animation-delay: 0.5s; }
+
+/* Медіа-запити для адаптивності */
 @media (max-width: 768px) {
   .title {
     font-size: 2.2rem;
@@ -213,21 +245,37 @@
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Додаткові анімації для інтерактивності */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
-.content > * {
-  animation: fadeIn 0.5s ease-out forwards;
+.title:hover {
+  animation: pulse 1s infinite;
 }
 
-.content > *:nth-child(1) { animation-delay: 0.1s; }
-.content > *:nth-child(2) { animation-delay: 0.3s; }
-.content > *:nth-child(3) { animation-delay: 0.5s; }
+/* Ефект хвилі для кнопок */
+.btn::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: scale(10, 10);
+  opacity: 0;
+  transition: transform .5s, opacity 1s;
+}
+
+.btn:active::after {
+  transform: scale(0, 0);
+  opacity: .3;
+  transition: 0s;
+}

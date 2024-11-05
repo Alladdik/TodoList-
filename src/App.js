@@ -6,7 +6,8 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Profile from './components/Profile';
 import Home from './components/Home';
-import OnePiece from './components/OnePiece'; // Додайте цей імпорт
+import OnePiece from './components/OnePiece';
+import Assistant from './components/Assistant';
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -26,15 +27,19 @@ const App = () => {
 
   return (
     <Router>
-      <Navbar user={user} onLogout={handleLogout} />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login setUser={setUser} />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/todos" element={<TodoList isAuthenticated={!!user} />} />
-        {user && <Route path="/profile" element={<Profile username={user.username} />} />}
-        <Route path="/onepiece" element={<OnePiece />} /> {/* Додайте цей маршрут */}
-      </Routes>
+      <div className="App">
+        <Navbar user={user} onLogout={handleLogout} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login setUser={setUser} />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/todos" element={<TodoList isAuthenticated={!!user} />} />
+          {user && <Route path="/profile" element={<Profile username={user.username} />} />}
+          <Route path="/onepiece" element={<OnePiece />} />
+          <Route path="/assistant" element={<Assistant />} />
+        </Routes>
+        <Assistant />
+      </div>
     </Router>
   );
 };
