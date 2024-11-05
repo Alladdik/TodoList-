@@ -3,8 +3,6 @@ import { Form, Button, ListGroup, Badge, Card, Modal } from 'react-bootstrap';
 import '../styles/TodoList.css';
 import { motion } from 'framer-motion';
 
-
-
 const TodoList = ({ isAuthenticated }) => {
   const [tasks, setTasks] = useState([]);
   const [archivedTasks, setArchivedTasks] = useState([]);

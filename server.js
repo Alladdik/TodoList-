@@ -43,7 +43,7 @@ const db = new sqlite3.Database('./tasks.db', (err) => {
         });
       }
     });
-    
+
     // Створюємо таблицю users, якщо вона не існує
     db.run(`CREATE TABLE IF NOT EXISTS users (
       id INTEGER PRIMARY KEY AUTOINCREMENT,

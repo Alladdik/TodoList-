@@ -217,23 +217,28 @@ const Navbar = ({ user, onLogout }) => {
           </>
         ) : (
           <>
-            <NavItem>
-              <AnimatedNavLink to="/" color="#3498db" hoverColor="#2980b9">
-                Home
-              </AnimatedNavLink>
-            </NavItem>
-            <NavItem>
-              <AnimatedNavLink to="/register" color="#9b59b6" hoverColor="#8e44ad">
-                Register
-              </AnimatedNavLink>
-            </NavItem>
-            <NavItem>
-              <OnePieceLink to="/onepiece">
-                One Piece
-              </OnePieceLink>
-            </NavItem>
-          </>
-        )}
+<NavItem>
+      <AnimatedNavLink to="/" color="#3498db" hoverColor="#2980b9">
+        Home
+      </AnimatedNavLink>
+    </NavItem>
+    <NavItem>
+      <AnimatedNavLink to="/login" color="#2ecc71" hoverColor="#27ae60">
+        Login
+      </AnimatedNavLink>
+    </NavItem>
+    <NavItem>
+      <AnimatedNavLink to="/register" color="#9b59b6" hoverColor="#8e44ad">
+        Register
+      </AnimatedNavLink>
+    </NavItem>
+    <NavItem>
+      <OnePieceLink to="/onepiece">
+        One Piece
+      </OnePieceLink>
+    </NavItem>
+  </>
+)}
       </NavList>
     </NavbarContainer>
   );
